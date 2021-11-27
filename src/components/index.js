@@ -1,16 +1,17 @@
-import React from "react";
-
+import React from 'react';
+import HomeComponent from './Home';
 
 export const AlbumList = React.lazy(
-  () =>
-    new Promise((resolve, reject) =>
-      setTimeout(() => resolve(import("./Albums/Albums")), 100)
-    )
+  () => new Promise((resolve, reject) => setTimeout(() => resolve(import('./Albums/Albums')), 100))
 );
 /* wait 500 ms to render component */
 export const AlbumDetail = React.lazy(
   () =>
     new Promise((resolve, reject) =>
-      setTimeout(() => resolve(import("./AlbumDetail/AlbumDetail")), 5000)
+      setTimeout(() => resolve(import('./AlbumDetail/AlbumDetail')), 5000)
     )
 );
+
+export const Home = () => {
+  return <HomeComponent />;
+};
